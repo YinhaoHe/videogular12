@@ -5,16 +5,12 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
 import { HomePage } from './home.page';
-import { MatSlider, MatSliderModule, MatSelectModule, MatCheckbox, MatCheckboxModule } from '@angular/material';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    MatSliderModule,
-    MatSelectModule,
-    MatCheckboxModule,
     RouterModule.forChild([
       {
         path: '',
