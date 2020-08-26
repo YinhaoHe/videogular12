@@ -1,48 +1,63 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<mat-card>
+  <mat-card-content>
+    <h2 class="example-h2">Slider configuration</h2>
 
-<ion-content padding>
-  <vg-player>
-    <!-- <vg-overlay-play></vg-overlay-play>
-    <vg-buffering></vg-buffering>
+    <section class="example-section">
+      <mat-form-field class="example-margin">
+        <input matInput type="number" placeholder="Value" [(ngModel)]="value">
+      </mat-form-field>
+      <mat-form-field class="example-margin">
+        <input matInput type="number" placeholder="Min value" [(ngModel)]="min">
+      </mat-form-field>
+      <mat-form-field class="example-margin">
+        <input matInput type="number" placeholder="Max value" [(ngModel)]="max">
+      </mat-form-field>
+      <mat-form-field class="example-margin">
+        <input matInput type="number" placeholder="Step size" [(ngModel)]="step">
+      </mat-form-field>
+    </section>
 
-    <vg-scrub-bar>
-      <vg-scrub-bar-current-time [vgSlider]="true"></vg-scrub-bar-current-time>
-      <vg-scrub-bar-buffering-time></vg-scrub-bar-buffering-time>
-    </vg-scrub-bar>
+    <section class="example-section">
+      <mat-checkbox class="example-margin" [(ngModel)]="showTicks">Show ticks</mat-checkbox>
+      <mat-checkbox class="example-margin" [(ngModel)]="autoTicks" *ngIf="showTicks">
+        Auto ticks
+      </mat-checkbox>
+      <mat-form-field class="example-margin" *ngIf="showTicks && !autoTicks">
+        <input matInput type="number" placeholder="Tick interval" [(ngModel)]="tickInterval">
+      </mat-form-field>
+    </section>
 
-    <vg-controls>
-      <vg-play-pause></vg-play-pause>
-      <vg-playback-button></vg-playback-button>
+    <section class="example-section">
+      <mat-checkbox class="example-margin" [(ngModel)]="thumbLabel">Show thumb label</mat-checkbox>
+    </section>
 
-      <vg-time-display vgProperty="current" vgFormat="mm:ss"></vg-time-display>
+    <section class="example-section">
+      <mat-checkbox class="example-margin" [(ngModel)]="vertical">Vertical</mat-checkbox>
+      <mat-checkbox class="example-margin" [(ngModel)]="invert">Inverted</mat-checkbox>
+    </section>
 
-      <vg-scrub-bar style="pointer-events: none;"></vg-scrub-bar>
+    <section class="example-section">
+      <mat-checkbox class="example-margin" [(ngModel)]="disabled">Disabled</mat-checkbox>
+    </section>
 
-      <vg-time-display vgProperty="left" vgFormat="mm:ss"></vg-time-display>
-      <vg-time-display vgProperty="total" vgFormat="mm:ss"></vg-time-display>
+  </mat-card-content>
+</mat-card>
 
-      <vg-track-selector></vg-track-selector>
-      <vg-mute></vg-mute>
-      <vg-volume></vg-volume>
+<mat-card class="result">
+  <mat-card-content>
+    <h2 class="example-h2">Result</h2>
 
-      <vg-fullscreen></vg-fullscreen>
-    </vg-controls> -->
-
-    <video [vgMedia]="media" #media id="singleVideo" preload="auto" crossorigin controls>
-      <source src="http://static.videogular.com/assets/videos/videogular.mp4" type="video/mp4">
-      <source src="http://static.videogular.com/assets/videos/videogular.ogg" type="video/ogg">
-      <source src="http://static.videogular.com/assets/videos/videogular.webm" type="video/webm">
-<track kind="subtitles" label="English" src="http://static.videogular.com/assets/subs/pale-blue-dot.vtt" srclang="en"
-        default>
-      <track kind="subtitles" label="Español" src="http://static.videogular.com/assets/subs/pale-blue-dot-es.vtt"
-        srclang="es">
-    </video>
-
-  </vg-player>
-</ion-content>
+    <mat-slider
+        class="example-margin"
+        [disabled]="disabled"
+        [invert]="invert"
+        [max]="max"
+        [min]="min"
+        [step]="step"
+        [thumbLabel]="thumbLabel"
+        [tickInterval]="tickInterval"
+        [(ngModel)]="value"
+        [vertical]="vertical">
+    </mat-slider>
+  </mat-card-content>
+</mat-card>

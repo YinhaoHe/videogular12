@@ -1,7 +1,5 @@
 {
-  "name": "v4-videogular2",
-  "integrations": {
-    "cordova": {}
-  },
+  "name": "loadLocalFile",
+  "integrations": {},
   "type": "angular"
 }
