@@ -1,14 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
-  styleUrls: ['home.page.scss']
+  styleUrls: ['home.page.scss'],
 })
-export class HomePage implements OnInit {
-  videoSrc: String;
+export class HomePage {
 
-  ngOnInit() {
-    this.videoSrc = '/assets/video/video-test-med.mp4';
-  }
 }
